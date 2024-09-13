@@ -1,0 +1,25 @@
+[project]
+name = "mini-siem-frontend"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "babel>=2.16.0",
+    "flask-debugtoolbar>=0.15.1",
+    "flask-htmx>=0.3.2",
+    "flask>=3.0.3",
+    "requests>=2.32.3",
+]
+
+[project.scripts]
+hello = "mini_siem_frontend:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "djlint>=1.35.2",
+]

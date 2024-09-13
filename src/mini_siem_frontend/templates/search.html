@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}
+    Search Events
+{% endblock title %}
+{% block head %}
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+{% endblock head %}
+{% block content %}
+    <h1>Search Events</h1>
+    <form id="search-form" hx-get="/events/search" hx-target="#search-results">
+        <label for="query">Search query:</label>
+        <input type="text" id="query" name="query">
+    </form>
+    <div id="search-results"></div>
+    <img class="htmx-indicator"
+         src="http://samherbert.net/svg-loaders/svg-loaders/audio.svg" />
+{% endblock content %}
+{% block scripts %}
+    <script>document.body.addEventListener('htmx:afterSwap', function() {
+    hljs.highlightAll()
+})
+    </script>
+{% endblock scripts %}

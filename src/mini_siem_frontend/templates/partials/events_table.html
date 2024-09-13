@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <th>id</th>
+        <th>timestamp</th>
+        <th>data</th>
+    </thead>
+    <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event["id"] }}</td>
+                <td>{{ event["timestamp"]|format_datetime }}</td>
+                <td>
+                    <pre><code>{{ event["data"]|tojson(4) }}</code></pre>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
